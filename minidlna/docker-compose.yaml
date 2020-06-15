@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  minidlna:
+    image: vladgh/minidlna:0.3.11
+    restart: always
+    environment:
+      MINIDLNA_MEDIA_DIR_VIDEO: 'V,/media/video'
+      MINIDLNA_MEDIA_DIV_AUDIO: 'A,/media/audio'
+      MINIDLNA_MEDIA_DIV_IMAGE: 'P,/media/image'
+      MINIDLNA_FRIENDLY_NAME: minidlna
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /home/wendel/Videos:/media/video:ro
+      - /home/wendel/Pictures:/media/images:ro
+      - /home/wendel/Music:/media/audio:ro
+    network_mode: host

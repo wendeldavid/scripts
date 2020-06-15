@@ -2,7 +2,7 @@ version: '3'
 
 services:
   minidlna:
-    image: vladgh/minidlna:0.3.11
+    image: vladgh/minidlna:0.4.0
     restart: always
     environment:
       MINIDLNA_MEDIA_DIR_VIDEO: 'V,/media/video'
